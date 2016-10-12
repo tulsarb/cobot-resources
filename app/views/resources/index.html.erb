@@ -1,1 +1,5 @@
-Welcome to the App
+<h1>36° North Resources</h1>
+
+<% @resources.each do |resource| %>
+  <p><%= resource[:name] %> - <%= resource[:description] %></p>
+<% end %>
