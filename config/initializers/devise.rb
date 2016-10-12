@@ -274,5 +274,6 @@ Devise.setup do |config|
   #
   config.omniauth :cobot,
                   ENV.fetch('COBOT_CLIENT_ID'),
-                  ENV.fetch('COBOT_CLIENT_SECRET'), scope: 'read read_user signin'
+                  ENV.fetch('COBOT_CLIENT_SECRET'),
+                  scope: 'signin read_user read_resources write_resources'
 end
