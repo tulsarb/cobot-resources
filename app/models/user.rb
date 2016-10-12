@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :rememberable, :trackable, :validatable
 
   devise :omniauthable, omniauth_providers: [:cobot]
 
@@ -11,15 +10,6 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.api_token = auth.credentials.token
-    end
-  end
-
-  def self.new_with_session(params, session)
-    binding.pry
-    super.tap do |user|
-      if data = session['devise.cobot_data'] && session['devise.cobot_data']['extra']['raw_info']
-        user.email = data['email'] if user.email.blank?
-      end
     end
   end
 end
