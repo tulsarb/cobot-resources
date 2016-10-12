@@ -275,5 +275,7 @@ Devise.setup do |config|
   config.omniauth :cobot,
                   ENV.fetch('COBOT_CLIENT_ID'),
                   ENV.fetch('COBOT_CLIENT_SECRET'),
-                  scope: 'signin read_user read_resources write_resources'
+                  client_options: {
+                    authorize_url: 'https://members.36n.co/oauth/authorize'
+                  }
 end
