@@ -33,6 +33,7 @@ gem 'devise'
 gem 'omniauth_cobot'
 gem 'cobot_client'
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'font-awesome-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
