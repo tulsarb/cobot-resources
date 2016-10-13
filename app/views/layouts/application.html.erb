@@ -9,13 +9,17 @@
   </head>
 
   <body>
-    <p><%= notice %></p>
-    <p><%= alert %></p>
+    <main role="main" class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= render 'layouts/messages' %>
 
-    <%= yield %>
+        <%= yield %>
 
-    <% if user_signed_in? %>
-      <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
-    <% end %>
+        <% if user_signed_in? %>
+          <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
+        <% end %>
+      </div>
+    </main>
   </body>
 </html>
