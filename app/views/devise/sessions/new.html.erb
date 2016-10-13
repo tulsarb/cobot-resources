@@ -1,3 +1,6 @@
-<h2>Log in</h2>
+<h1>36°N Resources</h1>
 
-<%= link_to "Sign in with 36°N", user_cobot_omniauth_authorize_path %>
+<%= link_to user_cobot_omniauth_authorize_path, class: 'btn btn-primary' do %>
+  <i class="fa fa-building" aria-hidden="true"></i> Sign in with your 36°N Account
+<% end %>
+
