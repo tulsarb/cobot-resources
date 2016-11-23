@@ -18,6 +18,8 @@ gem 'cobot_client'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'font-awesome-rails'
 
+gem 'sidekiq'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
