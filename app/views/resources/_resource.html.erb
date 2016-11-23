@@ -1,0 +1,9 @@
+<% if resource_iteration.first? %>
+  <ul>
+<% end %>
+
+  <li><%= resource.name %> - <%= resource.description %></li>
+
+<% if resource_iteration.last? %>
+  </ul>
+<% end %>
