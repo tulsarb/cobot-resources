@@ -1,6 +1,6 @@
 <h1>36° North Resources</h1>
 <ul>
   <% @resources.each do |resource| %>
-    <li><%= resource[:name] %> - <%= resource[:description] %></li>
+    <li><%= resource.name %> - <%= resource.description %></li>
   <% end %>
 </ul>

@@ -8,15 +8,16 @@ feature 'list resources' do
   end
   describe 'it shows a list of resources' do
     let(:user) { create(:user) }
+    let!(:resource) { create(:resource) }
 
     it 'list a resource' do
       visit root_path
-      expect(page).to have_content('North Resources Bike 1')
+      expect(page).to have_content(resource.name)
     end
 
     it 'list the correct number of resource' do
       visit root_path
-      expect(page).to have_selector('li', count: 11)
+      expect(page).to have_selector('li', count: Resource.count)
     end
   end
 end
