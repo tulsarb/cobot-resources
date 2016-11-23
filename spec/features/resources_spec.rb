@@ -4,7 +4,7 @@ feature 'list resources' do
   before do
     sign_in user
 
-    allow_any_instance_of(User).to receive(:api_token).and_return(ENV.fetch('COBOT_TEST_API_KEY'))
+    allow_any_instance_of(User).to receive(:api_token).and_return(ENV.fetch('COBOT_API_KEY'))
   end
   describe 'it shows a list of resources' do
     let(:user) { create(:user) }
