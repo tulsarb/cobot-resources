@@ -11,12 +11,12 @@ feature 'list resources' do
     let!(:resource) { create(:resource) }
 
     it 'list a resource' do
-      visit root_path
+      visit resources_path
       expect(page).to have_content(resource.name)
     end
 
     it 'list the correct number of resource' do
-      visit root_path
+      visit resources_path
       expect(page).to have_selector('li', count: Resource.count)
     end
   end
