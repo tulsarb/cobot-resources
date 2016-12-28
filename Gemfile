@@ -11,13 +11,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-
 gem 'devise'
 gem 'omniauth_cobot'
 gem 'cobot_client'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'font-awesome-rails'
-
+gem 'jquery-ui-rails'
 gem 'sidekiq'
 
 source 'https://rails-assets.org' do

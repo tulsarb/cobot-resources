@@ -1,27 +1,35 @@
-<%= form_for @booking do |f| %>
-  <p>
-  <%= f.label :date %>
-  <%= f.date_field :date, value: Date.today %>
-  </p>
-
-  <p>
-  <%= f.label :time %>
-  <%= f.time_field :time %>
-  </p>
-
-  <p>
-  <%= f.label :duration_hours %>
-  <%= f.number_field :duration_hours, value: 0 %>
-  </p>
-
-  <p>
-  <%= f.label :duration_minutes %>
-  <%= f.number_field :duration_minutes, value: 30 %>
-  </p>
-
-  <p>
-  <%= f.label :resource %>
-  <%= f.select :resource, options_for_select(@resources.map { |r| [r.name, r.integration_id] }), prompt: 'All Rooms' %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<form action="_booking_form_submit" method="get" accept-charset="utf-8">
+  <div class="form-group">
+    <label for="date">
+      Date
+    </label>
+    <input type="date" class="form-control datepicker" name="date" id="date" value="<%= Date.today %>">
+  </div>
+  <div class="form-group">
+    <label for="time">
+      Time
+    </label>
+    <input type="time" class="form-control" name="time" id="time" value="0">
+  </div>
+  <div class="form-group">
+    <label for="durationHour">
+      Duration Hour
+    </label>
+    <input type="number" class="form-control" name="durationHour" id="durationHour" value="0">
+  </div>
+  <div class="form-group">
+    <label for="durationMinutes">
+      Duration Minutes
+    </label>
+    <input type="number" class="form-control" name="durationMinutes" id="durationMinutes" value="30">
+  </div>
+  <div class="form-group">
+    <label for="resource">
+      Resources
+    </label>
+    <select name="resource" class="form-control" id="resource">
+      <%= options_for_select(@resources.map { |r| [r.name, r.integration_id] }) %>
+    </select>
+  </div>
+  <input class="btn btn-primary" type="submit" name="View Availability">
+</form>

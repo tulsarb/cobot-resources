@@ -15,4 +15,11 @@
 // = require tether
 // = require bootstrap
 // = require turbolinks
+//= require jquery-ui
 // = require_tree .
+
+$(function() {
+  $('.datepicker').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});

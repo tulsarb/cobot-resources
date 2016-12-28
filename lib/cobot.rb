@@ -28,4 +28,13 @@ class Cobot
       resource.new_record? || resource.changed? ? resource.save : resource
     end
   end
+
+  def get_bookings
+    @api_resources = client.get '36n', '/bookings', {from: Time.zone.now, to: (Time.zone.now + 1.day)}
+
+
+    @api_resources.each do |api_resource|
+      binding.pry
+    end
+  end
 end
